@@ -7,7 +7,7 @@ module ActiveRecord
   module ConnectionAdapters
     class PostgreSQLAdapter < AbstractAdapter
       def supports_disable_referential_integrity?
-        false
+        false unless Rails.env.test?
       end
     end
   end
